@@ -1,13 +1,28 @@
 import React from 'react';
-import { ChatEngine } from 'react-chat-engine';
+import Jane from './jane';
+import John from './john';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
-    <ChatEngine
-      projectID='c6868c85-147a-468c-9b22-bfe21187626b'
-      userName='JohnDoe'
-      userSecret='P@ssw0rd'
-    />
+    <Router>
+      <Switch>
+        <Route path="/John">
+          <John />
+        </Route>
+        <Route path="/Jane">
+          <Jane />
+        </Route>
+        <Route path="/">
+          <div>
+            <ul>
+                <li><Link to="/John">John</Link></li>
+                <li><Link to="/Jane">Jane</Link></li>
+            </ul>
+          </div>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
