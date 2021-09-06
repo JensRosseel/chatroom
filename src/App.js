@@ -1,7 +1,28 @@
 import React from 'react';
+import './App.css';
+import './Nav.css';
 import Jane from './jane';
 import John from './john';
+import john from './img/john.jpg';
+import jane from './img/jane.png';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
+class Nav extends React.Component {
+  render(){
+    return(
+      <div className="navWindow">
+        <div className="loginCard">
+          <img src={john} alt="John picture"/>
+          <Link to="/John">Login as John</Link>
+        </div>
+        <div className="loginCard">
+          <img src={jane} alt="Jane picture"/>
+          <Link to="/Jane">Login as Jane</Link>
+        </div>
+      </div>
+    )
+  }
+}
 
 function App() {
   return (
@@ -14,12 +35,7 @@ function App() {
           <Jane />
         </Route>
         <Route path="/">
-          <div>
-            <ul>
-                <li><Link to="/John">John</Link></li>
-                <li><Link to="/Jane">Jane</Link></li>
-            </ul>
-          </div>
+          <Nav />
         </Route>
       </Switch>
     </Router>
