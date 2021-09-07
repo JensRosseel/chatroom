@@ -7,6 +7,8 @@ export default function John() {
             projectID='c6868c85-147a-468c-9b22-bfe21187626b'
             userName='JohnDoe'
             userSecret='P@ssw0rd'
+            height = '100vh'
+
         />
     )
 }
