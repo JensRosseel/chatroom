@@ -1,6 +1,9 @@
 import React from 'react'
 import { ChatEngine } from 'react-chat-engine';
 
+
+import ChatFeed from './components/ChatFeed';
+
 export default function John() {
     return (
         <ChatEngine
@@ -8,6 +11,7 @@ export default function John() {
             userName='JohnDoe'
             userSecret='P@ssw0rd'
             height = '100vh'
+            renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
 
         />
     )

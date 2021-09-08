@@ -7,6 +7,8 @@ import john from './img/john.jpg';
 import jane from './img/jane.png';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
+import ChatFeed from './components/ChatFeed';
+
 class Nav extends React.Component {
   render(){
     return(

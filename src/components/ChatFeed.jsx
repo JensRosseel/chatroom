@@ -4,7 +4,13 @@ import TheirMessage from "./TheirMessage";
 
 
 
-const ChatFeed = () => {
+const ChatFeed = (props) => {
+    const { chats, activeChat, userName, messages} = props;
+
+    const chat = chats && chats[activeChat];
+
+    const
+
     return (
         <div>
             ChatFeed
