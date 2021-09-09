@@ -1,4 +1,6 @@
-const MyMessage = () => {
+const MyMessage = ({message}) => {
+    if
+
     return (
         <div>
             MyMessage
