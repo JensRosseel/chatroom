@@ -3,9 +3,16 @@ import { ChatEngine } from 'react-chat-engine';
 
 
 import ChatFeed from './components/ChatFeed';
+import LoginForm from './components/LoginForm';
+
+import LoginForm from "./components/LoginForm";
 
 export default function John() {
-    return (
+
+    if(!localStorage.getItem('username')) return <LoginForm/>
+
+
+        return (
         <ChatEngine
             projectID='c6868c85-147a-468c-9b22-bfe21187626b'
             userName='JohnDoe'
