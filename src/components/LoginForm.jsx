@@ -5,25 +5,27 @@ const LoginForm = () => {
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
 
         //authanticate all the specific data
-        const authObject = { 'Project-ID': "c6868c85-147a-468c-9b22-bfe21187626b", 'User-Name': username, 'User-Secret' : password}
+        const authObject = {
+            'Project-ID': "c6868c85-147a-468c-9b22-bfe21187626b", 'User-Name': username, 'User-Secret': password
+        }
 
 
-        try {
         //username / password >> chatengine >> give messages
-           await axios.get('https://api.chatengine.io/chats', {headers: authObject});
-        // if works >> log in
+        try {
+            await axios.get('https://api.chatengine.io/chats', {headers: authObject});
+            // if works >> log in
 
             localStorage.setItem('username', username);
             localStorage.setItem('password', password);
 
             window.location.reload();
         } catch (error) {
-        // else error >> try again
+            // else error >> try again
 
         }
     }
@@ -33,8 +35,8 @@ const LoginForm = () => {
             <div className="form">
                 <h1 className="title">Chat Room</h1>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" value={username} onChange={(e) => setUserName(e.target.value)} className="input" placeholder="Username" required={}/>
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required={}/>
+                    <input type="text" value={username} onChange={(e) => setUserName(e.target.value)} className="input" placeholder="Username" required/>
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required/>
                     <div align="center">
                         <button type="submit" className="button">
                             <span>Start Chatting</span>
@@ -49,4 +51,4 @@ const LoginForm = () => {
     )
 }
 
-export default Login
+export default LoginForm
